@@ -4,20 +4,14 @@ import { Pet } from "./Pet";
 
 class App extends React.Component {
   render() {
-    return React.createElement("div", {}, [
-      React.createElement("h1", {}, "Adopter"),
-      React.createElement(Pet, { name: "Luna", animal: "Dog", breed: "Husky" }),
-      React.createElement(Pet, {
-        name: "Biscuit",
-        animal: "Cat",
-        breed: "Street"
-      }),
-      React.createElement(Pet, {
-        name: "Blackie",
-        animal: "Seal",
-        breed: "Baikal"
-      })
-    ]);
+    return (
+      <div>
+        <h1>Adopter</h1>
+        <Pet name="Luna" animal="Dog" breed="Husky" />
+        <Pet name="Biscuit" animal="Cat" breed="Street" />
+        <Pet name="Ed" animal="Seal" breed="Blackanese" />
+      </div>
+    );
   }
 }
 
