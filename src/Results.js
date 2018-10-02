@@ -44,6 +44,7 @@ export default class Results extends React.Component {
                                 breed={pet.breeds.breed}
                                 media={pet.media}
                                 location={pet.contact.city}
+                                id={pet.id}
                             />
                         );
                     })}
