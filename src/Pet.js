@@ -11,7 +11,7 @@ export default class Pet extends React.Component {
       photos = media.photos.photo.filter(photo => photo["@size"] === "pn");
     }
     return (
-      <Link to={`/details/${id}}`} className="pet">
+      <Link to={`/details/${id}`} className="pet">
         <div className="image-container">
           <img src={photos[0].value} alt={name} />
         </div>
