@@ -7,6 +7,12 @@ export default class SearchParams extends React.Component {
     animal: "",
     breed: ""
   };
+
+  handleLocationChange = event => {
+    this.setState({
+      location: event.target.value
+    });
+  };
   handleAnimalChange = event => {
     this.setState({
       animal: event.target.value
@@ -18,6 +24,7 @@ export default class SearchParams extends React.Component {
         <label htmlFor="location">
           Location
           <input
+            onChange={this.handleLocationChange}
             id="location"
             value={this.state.location}
             placeholder="Location"
@@ -27,7 +34,8 @@ export default class SearchParams extends React.Component {
           Animal
           <select
             id="animal"
-            value={this.state.handleAnimalChange}
+            value={this.state.animal}
+            onChange={this.handleAnimalChange}
             onBlur={this.handleAnimalChange}
           >
             <option />
