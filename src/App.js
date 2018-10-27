@@ -2,6 +2,8 @@ import React from "react";
 import { render } from "react-dom";
 import Results from "./Results";
 import { Router, Link } from "@reach/router";
+import pf from pathfinder-client
+import { Provider } from "./SearchContext"
 import Details from "./Details";
 import SearchParams from "./SearchParams";
 

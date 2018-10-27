@@ -89,9 +89,7 @@ export default class SearchParams extends React.Component {
           >
             <option />
             {this.state.breeds.map(breed => (
-              <option key={breed} value={breed}>
-                {breed}
-              </option>
+              <option key={breed} value={breed} />
             ))}
           </select>
         </label>
