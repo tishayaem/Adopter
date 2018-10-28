@@ -16,7 +16,7 @@ export default class Results extends React.Component {
 
     componentDidMount() {
         petfinder.pet
-            .find({ output: "full", location: "Los Angeles, Ca" })
+            .find({ output: "full", location: "Los Angeles, CA" })
             .then(data => {
                 let pets;
 
