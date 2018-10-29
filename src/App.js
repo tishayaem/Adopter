@@ -17,13 +17,14 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      location: "",
+      location: "Seattle, WA",
       animal: "",
       breed: "",
       breeds: [],
       handleAnimalChange: this.handleAnimalChange,
-      handleBreedChange: this.handleBreedsChange,
-      handleLocationChange: this.handleLocationChange
+      handleBreedChange: this.handleBreedChange,
+      handleLocationChange: this.handleLocationChange,
+      getBreeds: this.getBreeds
     };
   }
   handleLocationChange = event => {

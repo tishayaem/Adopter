@@ -1,6 +1,7 @@
 import React from "react";
 import { ANIMALS } from "petfinder-client";
 import { Consumer } from "./SearchContext";
+
 export default class SearchBox extends React.Component {
   render() {
     return (
@@ -10,9 +11,9 @@ export default class SearchBox extends React.Component {
             <label htmlFor="location">
               Location
               <input
-                onChange={this.handleLocationChange}
+                onChange={context.handleLocationChange}
                 id="location"
-                value={this.state.location}
+                value={context.location}
                 placeholder="Location"
               />
             </label>
@@ -20,9 +21,9 @@ export default class SearchBox extends React.Component {
               Animal
               <select
                 id="animal"
-                value={this.state.animal}
-                onChange={this.handleAnimalChange}
-                onBlur={this.handleAnimalChange}
+                value={context.animal}
+                onChange={context.handleAnimalChange}
+                onBlur={context.handleAnimalChange}
               >
                 <option />
                 {ANIMALS.map(animal => (
@@ -36,19 +37,21 @@ export default class SearchBox extends React.Component {
               Breed
               <select
                 id="breed"
-                value={this.state.breed}
-                onChange={this.handleBreedChange}
-                onBlur={this.handleBreedChange}
-                disabled={!this.state.breeds.length}
+                value={context.breed}
+                onChange={context.handleBreedChange}
+                onBlur={context.handleBreedChange}
+                disabled={!context.breeds.length}
               >
                 <option />
-                {this.state.breeds.map(breed => (
-                  <option key={breed} value={breed} />
+                {context.breeds.map(breed => (
+                  <option key={breed} value={breed}>
+                    {breed}
+                  </option>
                 ))}
               </select>
             </label>
           </div>
-         )}
+        )}
       </Consumer>
     );
   }
