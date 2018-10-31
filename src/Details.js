@@ -8,10 +8,9 @@ const petfinder = pf({
 });
 
 export default class Details extends React.Component {
-    state = {
-      loading: true
-    };
-  
+  state = {
+    loading: true
+  };
 
   componentDidMount() {
     petfinder.pet
@@ -21,7 +20,12 @@ export default class Details extends React.Component {
       })
       .then(data => {
         const pet = data.petfinder.pet;
-        let breed = pet.breeds.breed;
+        let breed;
+        if (Array.isArray(pet.breeds.breed)) {
+          breed = pet.breeds.breed.join(", ");
+        } else {
+          breed = pet.breeds.breed;
+        }
 
         this.setState({
           loading: false,
@@ -55,5 +59,5 @@ export default class Details extends React.Component {
         </div>
       </div>
     );
-    }
+  }
 }
