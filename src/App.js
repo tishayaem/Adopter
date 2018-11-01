@@ -67,7 +67,12 @@ class App extends React.Component {
     return (
       <div>
         <header>
-          <Link to={"/"}>Adopter</Link>
+          <Link to="/">Adopter</Link>
+          <Link to="/search-params">
+            <span aria-label="search" role="img">
+              🔍
+            </span>
+          </Link>
         </header>
         <Provider value={this.state}>
           <Router>
